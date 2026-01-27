@@ -1,0 +1,195 @@
+:root {
+    --font-main: 'Inter', sans-serif;
+    --color-primary: #0056b3;     /* Azul UAI fuerte */
+    --color-primary-light: #e3f2fd; /* Azul muy claro para fondos */
+    --color-text-dark: #1a1a1a;
+    --color-text-grey: #555555;
+    --color-bg-light: #ffffff;
+    --color-bg-grey: #f8f9fa;
+    --section-spacing: 6rem; /* Espaciado consistente entre secciones */
+}
+
+/* Reset y Bases */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: var(--font-main);
+    color: var(--color-text-dark);
+    line-height: 1.6;
+    background-color: var(--color-bg-light);
+    overflow-x: hidden; /* Evita scroll horizontal por animaciones */
+}
+
+/* Tipografía y Utilidades */
+h1, h2, h3 { font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; }
+h1 { font-size: clamp(2.5rem, 5vw, 4rem); } /* Tamaño dinámico */
+h2 { font-size: 2.2rem; margin-bottom: 1.5rem; }
+h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+p { font-size: 1.125rem; color: var(--color-text-grey); margin-bottom: 1.5rem; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.text-center { text-align: center; }
+.content-limit { max-width: 700px; margin: 0 auto; }
+.overflow-hidden { overflow: hidden; } /* Importante para animaciones laterales */
+.accent-text { color: var(--color-primary); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; display: block; margin-bottom: 1rem;}
+.shadow-lg { box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+.rounded { border-radius: 20px; }
+.relative { position: relative; }
+.mt-2 { margin-top: 1rem; }
+
+/* --- NAVBAR --- */
+.navbar { padding: 1.5rem 0; position: absolute; width: 100%; top: 0; z-index: 10;}
+.nav-content { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-weight: 900; font-size: 1.5rem; color: var(--color-primary); }
+.btn-nav { text-decoration: none; color: var(--color-primary); font-weight: 700; padding: 8px 20px; border-radius: 50px; background: rgba(255,255,255,0.8); transition: 0.3s;}
+.btn-nav:hover { background: white; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+
+/* --- HERO SECTION (Impacto) --- */
+.hero {
+    min-height: 95vh; /* Casi toda la pantalla */
+    padding-top: 120px; /* Espacio para la navbar */
+    display: flex;
+    align-items: center;
+    background: radial-gradient(circle at top right, var(--color-primary-light), #fff 70%);
+    overflow: hidden;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+/* Badge y Textos */
+.badge {
+    display: inline-block;
+    background-color: var(--color-primary-light);
+    color: var(--color-primary);
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero .subtitle { font-size: 1.25rem; max-width: 500px; }
+
+/* EL CELULAR (Mockup CSS) */
+.phone-mockup {
+    width: 300px;
+    height: 600px;
+    background: #111; /* Color del marco del celu */
+    border-radius: 40px;
+    padding: 10px; /* Grosor del marco */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+/* La pantalla dentro del marco */
+.phone-screen {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 32px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* El video/imagen dentro de la pantalla */
+.app-video, .app-screen {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que llene la pantalla sin deformarse */
+    display: block;
+}
+
+/* Animación de Flotar */
+.floating { animation: float 6s ease-in-out infinite; }
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); } /* Se mueve 20px hacia arriba */
+    100% { transform: translateY(0px); }
+}
+
+/* --- SECCIONES DEL PRODUCTO --- */
+.section { padding: var(--section-spacing) 0; }
+.bg-grey { background-color: var(--color-bg-grey); }
+.center-v { align-items: center; }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+
+/* Check list */
+.check-list { list-style: none; padding-left: 1rem;}
+.check-list li { margin-bottom: 0.8rem; position: relative; font-weight: 600;}
+.check-list li::before { content: "✅"; position: absolute; left: -25px; }
+
+/* Imágenes de producto superpuestas (Sección 2) */
+.screen-back { transform: rotate(-5deg) translateX(-20px); opacity: 0.8; border-radius: 20px;}
+.screen-front { position: absolute; top: 20px; left: 20px; transform: rotate(5deg); border-radius: 20px; z-index: 2;}
+.visual-right { height: 600px; display: flex; align-items: center; justify-content: center;}
+
+
+/* --- CTA FINAL Y FORMULARIO --- */
+.bg-blue { background-color: var(--color-primary); color: white; }
+.bg-blue h2, .bg-blue p, .text-white-opacity { color: rgba(255,255,255,0.9); }
+.h1-size { font-size: 3rem; }
+
+.cta-box {
+    background: rgba(255,255,255,0.1); /* Blanco transparente */
+    backdrop-filter: blur(10px); /* Efecto vidrio */
+    padding: 3rem;
+    border-radius: 20px;
+    margin-top: 3rem;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.signup-form { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.signup-form input { padding: 15px 25px; border: none; border-radius: 50px; flex: 1; min-width: 280px; font-size: 1rem; outline: none;}
+
+/* BOTONES */
+.btn-primary, .btn-cta {
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.btn-primary { background-color: var(--color-primary); color: white; }
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,86,179,0.3); }
+.big-btn { font-size: 1.2rem; }
+
+.btn-cta { background: white; color: var(--color-primary); font-size: 1.1rem; }
+.btn-cta:hover { box-shadow: 0 0 30px rgba(255,255,255,0.5); }
+
+/* Animación sutil de pulso para el botón final */
+.pulse-animation { animation: pulse 2s infinite; }
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(255, 255, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+}
+
+.tiny-text { font-size: 0.8rem; opacity: 0.7; }
+footer { text-align: center; padding: 3rem 0; font-size: 0.9rem; color: var(--color-text-grey); }
+
+/* --- RESPONSIVE (CELULAR) --- */
+@media (max-width: 968px) {
+    .hero-grid, .grid-2 { grid-template-columns: 1fr; gap: 3rem; text-align: center;}
+    .hero { padding-top: 100px; height: auto; padding-bottom: 4rem;}
+    .hero-text { order: 1; }
+    .hero-visual { order: 2; margin-top: 2rem; }
+    .subtitle { margin: 0 auto 2rem; }
+    
+    /* Reordenar secciones de producto para que la imagen siempre quede arriba en móvil */
+    .visual-left { order: 1; }
+    .text-block { order: 2; }
+    .visual-right { order: 1; height: auto; margin-bottom: 3rem; display: block;}
+    .screen-back, .screen-front { position: relative; top: 0; left: 0; transform: none; margin: -50px auto 0; display: block; max-width: 80%;}
+    .screen-back { margin-top: 0; }
+}
