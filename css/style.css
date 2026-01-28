@@ -246,3 +246,4 @@ p { font-size: clamp(1rem, 2vw, 1.125rem); color: var(--color-text-grey); margin
         margin-bottom: -20px; /* Pequeño overlap */
     }
     .screen-back { display: none; /* Ocultamos la de atrás en móvil para limpiar */ }
+}
