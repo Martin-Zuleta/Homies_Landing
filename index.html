@@ -15,7 +15,7 @@
     <nav class="navbar" data-aos="fade-down" data-aos-duration="1000">
         <div class="container nav-content">
             <div class="logo">Homies.</div>
-            <a href="#cta" class="btn-nav">Unirme a la espera</a>
+            <a href="#signup" class="btn-nav js-scroll">Regístrate</a>
         </div>
     </nav>
 
@@ -23,10 +23,11 @@
         <div class="container hero-grid">
             <div class="hero-text">
                 <span class="badge" data-aos="fade-down" data-aos-delay="200">Aquí nadie sobra</span>
-                <h1 data-aos="fade-right" data-aos-delay="400">Llegar a Santiago no debería sentirse tan solo.</h1>
-                <p class="subtitle" data-aos="fade-right" data-aos-delay="600">Homies es la comunidad para estudiantes de región que buscan algo más que sobrevivir: buscan sentirse acompañados, entendidos y parte de algo.</p>
+                <h1 data-aos="fade-right" data-aos-delay="400">Encuentra roomies y comunidad al llegar a Santiago</h1>
+                <p class="subtitle" data-aos="fade-right" data-aos-delay="600">Homies te ayuda a vivir el primer año con apoyo social y emocional temprano. Complementa los apoyos universitarios, no los reemplaza.</p>
                 <div data-aos="fade-up" data-aos-delay="800">
-                    <a href="#cta" class="btn-primary big-btn">Quiero ser parte de Homies 👉</a>
+                    <a href="#signup" class="btn-primary big-btn js-scroll">Regístrate</a>
+                    <a href="#mvp" class="btn-secondary big-btn js-scroll">Ver el MVP</a>
                 </div>
             </div>
             
@@ -72,37 +73,70 @@
      <section class="section bg-grey product-showcase overflow-hidden">
         <div class="container grid-2 center-v">
             <div class="text-block" data-aos="fade-right">
-                <span class="accent-text">Utilidades Clave</span>
-                <h2>Lo práctico, resuelto.</h2>
-                <p>Sabemos que la logística estresa. Integramos herramientas para que encontrar dónde vivir y cómo moverte no sea un dolor de cabeza.</p>
+                <span class="accent-text">Roomies + Comunidad</span>
+                <h2>Compatibilidad que se siente humana.</h2>
+                <p>Encuentra personas compatibles para vivir y crear vínculos reales desde el primer día. Menos soledad, más apoyo temprano.</p>
                 
                 <div class="feature-mini" data-aos="fade-up" data-aos-delay="100">
-                    <h3>🏠 Roomies UAI</h3>
-                    <p>Encuentra compañeros compatibles y datos de arriendo seguros cerca de las sedes.</p>
+                    <h3>🏠 Roomies</h3>
+                    <p>Busca y conecta con personas compatibles para compartir hogar y rutinas.</p>
                 </div>
                  <div class="feature-mini" data-aos="fade-up" data-aos-delay="200">
-                    <h3>🚌 Movilidad Integrada</h3>
-                    <p>Horarios de buses de acercamiento UAI y mejores rutas de transporte público en un solo lugar.</p>
+                    <h3>🤝 Comunidades</h3>
+                    <p>Encuentra grupos por intereses o carrera y crea redes antes de llegar.</p>
                 </div>
             </div>
             <div class="visual-block visual-right relative" data-aos="fade-left" data-aos-delay="300">
-                 <img src="https://via.placeholder.com/400x800/e3f2fd/0056b3?text=Pantalla+Mapa+Buses" alt="App Mapa" class="app-screen screen-back shadow-lg">
-                <img src="https://via.placeholder.com/400x800/ffffff/333333?text=Pantalla+Roomies" alt="App Roomies List" class="app-screen screen-front shadow-lg">
+                 <img src="https://via.placeholder.com/400x800/e3f2fd/0056b3?text=Pantalla+Filtros" alt="App Filtros" class="app-screen screen-back shadow-lg">
+                <img src="https://via.placeholder.com/400x800/ffffff/333333?text=Pantalla+Roomies" alt="App Roomies" class="app-screen screen-front shadow-lg">
             </div>
         </div>
     </section>
 
 
-    <section id="cta" class="section bg-blue text-white text-center">
+    <section id="mvp" class="section">
+        <div class="container content-limit text-center" data-aos="fade-up">
+            <h2>Así funciona Homies</h2>
+            <p>Explora el MVP y entiende cómo Homies conecta roomies y comunidades desde el inicio.</p>
+        </div>
+        <div class="container mvp-grid" data-aos="fade-up" data-aos-delay="200">
+            <div class="mvp-media-grid">
+                <div class="mvp-shot">Pantallazo: Roomies</div>
+                <div class="mvp-shot">Pantallazo: Comunidades</div>
+                <div class="mvp-shot">Pantallazo: Filtros</div>
+                <div class="mvp-shot">Pantallazo: Likes/Comentarios</div>
+            </div>
+            <div class="mvp-video">
+                <div class="mvp-video-inner">
+                    <span class="play-button">▶</span>
+                    <span class="video-label">Video demo (próximamente)</span>
+                </div>
+            </div>
+        </div>
+        <div class="container content-limit" data-aos="fade-up" data-aos-delay="300">
+            <ul class="check-list">
+                <li>Roomies: busca y conecta con personas compatibles</li>
+                <li>Comunidades: encuentra tu grupo por intereses o carrera</li>
+                <li>Filtros rápidos: keywords y chips</li>
+                <li>Interacción real: likes y comentarios</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="signup" class="section bg-blue text-white text-center">
         <div class="container content-limit" data-aos="zoom-in">
             <h2 class="h1-size">Queremos que llegar a Santiago sea más humano.</h2>
             <p class="text-white-opacity">Homies está en desarrollo y queremos construirlo contigo. Sé de los primeros en probarlo.</p>
             
             <div class="cta-box" data-aos="fade-up" data-aos-delay="300">
-                <form class="signup-form">
-                    <input type="email" placeholder="Tu correo institucional" required>
-                    <button type="submit" class="btn-cta pulse-animation">👉 Unirme a la lista de espera</button>
+                <form id="signup-form" class="signup-form" novalidate>
+                    <label class="sr-only" for="signup-name">Nombre (opcional)</label>
+                    <input id="signup-name" name="name" type="text" placeholder="Tu nombre (opcional)">
+                    <label class="sr-only" for="signup-email">Correo</label>
+                    <input id="signup-email" name="email" type="email" placeholder="Tu correo" required>
+                    <button type="submit" class="btn-cta pulse-animation">Quiero probar la beta</button>
                 </form>
+                <p class="form-message" id="signup-message" role="status" aria-live="polite"></p>
                 <p class="tiny-text mt-2">Prometemos 0 spam. Solo actualizaciones reales.</p>
             </div>
         </div>
@@ -114,6 +148,7 @@
         </div>
     </footer>
 
+    <script src="js/main.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         // Inicializar las animaciones
